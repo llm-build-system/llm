@@ -1,0 +1,18 @@
+type = "executable"
+name = "llm"
+standards = ["C++23"]
+
+[registries]
+official = "https://github.com/llm-build-system/llm-registry"
+
+[dependencies]
+private = ["./src/runtime"]
+
+[windows.msvc.flags]
+link = ["-Wl,/manifest:embed", "-Wl,/manifestinput:src/windows.manifest", "-Wl,/timestamp:0", "-Wl,/Brepro"]
+
+[windows.gnu.flags]
+link = ["-Wl,-Xlink=/manifest:embed", "-Wl,-Xlink=/manifestinput:src/windows.manifest", "-Wl,--no-insert-timestamp", "-Wl,-Xlink=/Brepro"]
+
+[windows.defines]
+private = ["NOMINMAX", "WIN32_LEAN_AND_MEAN", "UNICODE", "_UNICODE", "_WIN32_WINNT=0x0A00", "_CRT_SECURE_NO_WARNINGS"]

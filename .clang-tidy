@@ -1,0 +1,16 @@
+Checks: '-*,bugprone-*,performance-*,readability-identifier-naming'
+HeaderFilterRegex: '(^|[/\\])(src|tests)[/\\]'
+ExcludeHeaderFilterRegex: '(^|[/\\])\.llm[/\\]cache[/\\]'
+CheckOptions:
+  readability-identifier-naming.NamespaceCase: lower_case
+  readability-identifier-naming.ClassCase: CamelCase
+  readability-identifier-naming.StructCase: CamelCase
+  readability-identifier-naming.EnumCase: CamelCase
+  readability-identifier-naming.EnumConstantCase: CamelCase
+  readability-identifier-naming.TypeAliasCase: CamelCase
+  readability-identifier-naming.FunctionCase: camelBack
+  readability-identifier-naming.VariableCase: CamelCase
+  readability-identifier-naming.ParameterCase: CamelCase
+  readability-identifier-naming.MemberCase: CamelCase
+  readability-identifier-naming.FunctionIgnoredRegexp: 'main|wmain'
+  readability-identifier-naming.GlobalVariableIgnoredRegexp: 'environ'
